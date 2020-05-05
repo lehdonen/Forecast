@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherDTO } from 'src/app/models/Weather';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  city: 'Helsinki';
+  currentWeather: WeatherDTO;
+  weatherIconURL: string;
 
-  ngOnInit() {
+  constructor(
+    private apiService: ApiService
+  ) {
   }
 
+  ngOnInit() {
+    this.apiService.getWeather('Helsinki').subscribe((res: WeatherDTO) => {
+      setTimeout(() => {
+        this.currentWeather = res;
+        this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
+      }, 1000);
+    });
+  }
 }

@@ -1,1 +1,16 @@
-<p>home works!</p>
+<div class="weather-wrapper">
+    <ng-container *ngTemplateOutlet="currentWeather ? weather : loading"></ng-container>
+</div>
+
+<ng-template #loading>
+    <span>Fetching Data...</span>
+</ng-template>
+
+<ng-template #weather>
+    <span class="city">Helsinki</span>
+        <span class="description">{{currentWeather.weather[0].description}}</span>
+        <div class="weather-icon" *ngIf="weatherIconURL">
+            <img src="{{weatherIconURL}}"/>
+        </div>
+        <span class="temp">{{currentWeather.main.temp | degree}}</span>
+</ng-template>
