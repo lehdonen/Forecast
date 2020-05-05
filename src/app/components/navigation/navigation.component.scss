@@ -1,0 +1,31 @@
+:host {
+    .navigation-wrapper {
+        height: 8%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        position: fixed;
+        z-index: 100;
+        bottom: 0;
+        overflow: hidden;
+        
+
+        .navigation-item {
+            display: flex;
+            flex: 1;
+            height: 100%;
+            font-family: "Fira Sans", sans-serif;
+            text-align: center;
+            border: 1px solid rgb(0, 0, 0);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &:active {
+            color: rgb(233, 53, 53);
+        }
+    }
+}

@@ -1,1 +1,8 @@
-<p>navigation works!</p>
+<div class="navigation-wrapper">
+    <div class="navigation-item" 
+    [class.active]="path.active" 
+    (click)="navigate(path)"
+    *ngFor="let path of navigationPaths">
+        <span>{{path.label.toUpperCase()}}</span>
+    </div>
+</div>
