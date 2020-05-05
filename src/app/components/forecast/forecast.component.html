@@ -1,1 +1,30 @@
-<p>forecast works!</p>
+<div class="forecast-wrapper">
+    <div class="forecast" *ngTemplateOutlet="forecast ? forecastTemp : loading">
+
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="loading-wrapper">
+        <span>Fetching data...</span>
+    </div>
+</ng-template>
+
+<ng-template #forecastTemp>
+    <div class="forecast" *ngFor="let weather of forecast.list">
+        <div class="icon-wrapper">
+            <img src="{{iconUrl + weather.weather[0].icon + '.png'}}"/>
+        </div>
+        <div class="info-wrapper">
+            <div class="time">
+                <span>{{weather.dt | localdate}}</span>
+            </div>
+            <div class="description">
+                <span>{{weather.weather[0].description}}</span>
+            </div>
+        </div>
+        <div class="temp-wrapper">
+            <span>{{weather.main.temp | degree}}</span>
+        </div>
+    </div>
+</ng-template>
