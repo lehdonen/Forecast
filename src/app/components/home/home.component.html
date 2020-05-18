@@ -1,3 +1,7 @@
+<div class="input">
+<input type="search" #searchInput (search)="search(searchInput.value)">
+</div>
+
 <div class="weather-wrapper">
     <ng-container *ngTemplateOutlet="currentWeather ? weather : loading"></ng-container>
 </div>
@@ -7,10 +11,17 @@
 </ng-template>
 
 <ng-template #weather>
-    <span class="city">Helsinki</span>
+    <span class="city">{{city}}</span>
         <span class="description">{{currentWeather.weather[0].description}}</span>
         <div class="weather-icon" *ngIf="weatherIconURL">
             <img src="{{weatherIconURL}}"/>
         </div>
         <span class="temp">{{currentWeather.main.temp | degree}}</span>
 </ng-template>
+
+<google-map
+  height="500px"
+  width="100%"
+  [center]="center"
+  [zoom]="13"
+></google-map>
