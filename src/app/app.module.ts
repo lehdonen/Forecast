@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DegreePipe } from './pipes/degree.pipe';
 import { LocaldatePipe } from './pipes/localdate.pipe';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LocaldatePipe } from './pipes/localdate.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
