@@ -37,11 +37,11 @@ export class HomeComponent implements OnInit {
   }
 
   search(input: string) {
-    this.cityService.changeCity(input);
-    this.city = this.cityService.getCity();
-
-    this.apiService.getWeather(this.city).subscribe((res: WeatherDTO) => {
+    this.apiService.getWeather(input).subscribe((res: WeatherDTO) => {
+      if (res.cod === 200) {
       setTimeout(() => {
+        this.cityService.changeCity(input);
+        this.city = this.cityService.getCity();
         this.currentWeather = res;
         this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
         this.center = {
@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
           lng: res.coord.lon,
         };
       }, 1000);
+    }}, error => { window.alert('Invalid city or API server down!');
     });
   }
 }
