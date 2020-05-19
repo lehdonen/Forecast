@@ -18,8 +18,11 @@ export class ForecastComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.cityService.getCity() === undefined) {
+      this.cityService.changeCity('Helsinki');
+    }
+
     this.city = this.cityService.getCity();
-    console.log(this.city);
 
     this.apiService.getForecast(this.city).subscribe(res => {
       setTimeout(() => {

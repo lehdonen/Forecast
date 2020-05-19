@@ -4,6 +4,7 @@
         flex-direction: column;
         height: 92%;
         width: 100%;
+        font-family: "Fira Sans", sans-serif;
     }
 
     .loading-wrapper {
@@ -22,13 +23,12 @@
         width: 100%;
 
         .icon-wrapper {
-            padding-left: 10px;
-            margin-right: 5%;
+            padding-left: 20px;
         }
 
         &:last-child {
             border-bottom: none;
-            margin-bottom: 20%;
+            margin-bottom: 5%;
         }
 
         .temp-wrapper {
