@@ -10,7 +10,7 @@ import { CityService } from 'src/app/services/city.service';
 export class ForecastComponent implements OnInit {
   city: string;
   forecast: ForecastDTO;
-  iconUrl = 'https://openweathermap.org/img/wn/';
+  iconUrl = 'https://cors-anywhere.herokuapp.com/https://openweathermap.org/img/wn/';
 
   constructor(
     private apiService: ApiService,

@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       this.lat = res.coord.lat;
       this.long = res.coord.lon;
       this.currentWeather = res;
-      this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
+      this.weatherIconURL = `https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
     });
   }
 
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
         this.cityService.changeCity(input);
         this.city = this.cityService.getCity();
         this.currentWeather = res;
-        this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
+        this.weatherIconURL = `https://cors-anywhere.herokuapp.com/http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
         this.lat = res.coord.lat;
         this.long = res.coord.lon;
       }, 1000);
