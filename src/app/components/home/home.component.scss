@@ -1,10 +1,41 @@
 :host {
+
     .weather-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 90%;
-        width: 100;
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: "Fira Sans", sans-serif;
+    }
+
+    .search-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .input {
+        text-align: center;
+        padding: 0 10px;
+        height: 30px;
+        width: 100%;
+        color: #222;
+        border: 1 px solid;
+        font-family: "Fira Sans", sans-serif;
+    }
+
+    .city {
+        font-family: "Fira Sans", sans-serif;
+        margin-bottom: 10 px;
+    }
+
+    .temp {
+        font-family: "Fira Sans", sans-serif;
     }
 }

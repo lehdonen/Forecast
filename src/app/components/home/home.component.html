@@ -1,5 +1,5 @@
-<div class="input">
-<input type="search" #searchInput (search)="search(searchInput.value)">
+<div class="search-wrapper">
+    <input type="search" class="input" #searchInput (search)="search(searchInput.value)" ng-model="searchString" placeholder="Enter a city">
 </div>
 
 <div class="weather-wrapper">
@@ -11,8 +11,7 @@
 </ng-template>
 
 <ng-template #weather>
-    <span class="city">{{city}}</span>
-        <span class="description">{{currentWeather.weather[0].description}}</span>
+    <span class="city">{{city | titlecase}}</span>
         <div class="weather-icon" *ngIf="weatherIconURL">
             <img src="{{weatherIconURL}}"/>
         </div>
