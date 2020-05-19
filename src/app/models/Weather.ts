@@ -3,6 +3,7 @@ export interface WeatherDTO {
     weather: [Weather];
     main: Main;
     coord: Coord;
+    cod: number;
 }
 
 export interface Weather {
