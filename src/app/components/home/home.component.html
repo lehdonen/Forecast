@@ -18,9 +18,9 @@
         <span class="temp">{{currentWeather.main.temp | degree}}</span>
 </ng-template>
 
-<google-map
+<agm-map
   height="500px"
   width="100%"
-  [center]="center"
-  [zoom]="13"
-></google-map>
+  [longitude]="long"
+  [latitude]="lat"
+></agm-map>

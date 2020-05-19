@@ -9,7 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DegreePipe } from './pipes/degree.pipe';
 import { LocaldatePipe } from './pipes/localdate.pipe';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleMapsModule
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDGSUkcmBwCTDzMAFuEBBarmuBpDUTibro'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

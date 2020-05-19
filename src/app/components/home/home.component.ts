@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   city: string;
   currentWeather: WeatherDTO;
   weatherIconURL: string;
-  center: google.maps.LatLngLiteral;
+  long: number;
+  lat: number;
 
   constructor(
     private apiService: ApiService,
@@ -27,10 +28,8 @@ export class HomeComponent implements OnInit {
     }
     this.city = this.cityService.getCity();
     this.apiService.getWeather(this.cityService.getCity()).subscribe((res: WeatherDTO) => {
-      this.center = {
-        lat: res.coord.lat,
-        lng: res.coord.lon,
-      };
+      this.lat = res.coord.lat;
+      this.long = res.coord.lon;
       this.currentWeather = res;
       this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
     });
@@ -44,10 +43,8 @@ export class HomeComponent implements OnInit {
         this.city = this.cityService.getCity();
         this.currentWeather = res;
         this.weatherIconURL = `http://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`;
-        this.center = {
-          lat: res.coord.lat,
-          lng: res.coord.lon,
-        };
+        this.lat = res.coord.lat;
+        this.long = res.coord.lon;
       }, 1000);
     }}, error => { window.alert('Invalid city or API server down!');
     });
