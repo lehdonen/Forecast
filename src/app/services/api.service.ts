@@ -8,8 +8,8 @@ import { ForecastDTO } from '../models/Forecast';
   providedIn: 'root'
 })
 export class ApiService {
-  weatherEndpoint = 'https://api.openweathermap.org/data/2.5/weather?q=';
-  forecastEndpoint = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+  weatherEndpoint = 'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=';
+  forecastEndpoint = 'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=';
   apiKey = '1926fe0ba26221588265e05596d1c0e3';
 
   constructor(
